@@ -1,0 +1,39 @@
+<head>
+
+<HTA:application icon="favicon.ico">
+<title>Start Local Wifi</title>
+<HTA:APPLICATION 
+     APPLICATIONNAME="Wifi Hotspot"
+     SCROLL="yes"
+     SINGLEINSTANCE="yes"
+>
+
+
+>
+<style>
+body
+{background-color:cyan;}
+li{list-style:none;}
+
+</style>
+
+</head>
+
+<script language="VBScript">
+height="400"
+width="100"
+   Sub StartWifi
+	 set shell=CreateObject("Shell.Application")
+     shell.ShellExecute "mywifi.bat",,"C:\Wifix\", "runas", 0
+	 End Sub
+	 Sub StopWifi
+	 set shell=CreateObject("Shell.Application")
+     shell.ShellExecute "stopmywifi.bat",,"C:\Wifix\", "runas", 0
+   End Sub
+</script>
+<body>
+<ol>
+<li><input type="button" style="color:yellow;height:100px;width:500px;border-radius:5px;background-color:black;margin:70px;float:center;" value="Start Wifi" name="StartWifi"  onClick="StartWifi"></li>
+<li><input type="button" style="color:yellow;height:100px;width:500px;border-radius:5px;background-color:black;margin:70px;float;center;"value="Stop Wifi" name="StopWifi"  onClick="StopWifi"></li>
+</ol>
+</body>
